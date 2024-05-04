@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery Shop</title>
+    <!-- Dodajte Bootstrap stilove -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Dodatni stilovi */
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4">Pizza Delivery Shop</h1>
+
+    <!-- Forma za izvještaj -->
+    <form id="reportForm" action="/izvjestaj-forma" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="tipIzvjestaja">Tip Izvještaja:</label>
+                <select id="tipIzvjestaja" name="tipIzvjestaja" class="form-control">
+                    <option value="prodajaProizvoda">Prodaja proizvoda</option>
+                    <option value="prodajaPoKupcima">Prodaja po kupcima</option>
+                    <option value="listaNarudzbiKojeNisuIsporucene">Lista narudžbi koje nisu isporučene</option>
+                    <option value="listaIsporucenihNarudzbiSaVremenom">Lista isporučenih narudžbi sa vremenom</option>
+                    <option value="prosjecnoVrijemeIsporukePoDostavljacima">Prosjecno vrijeme isporuke po dostavljačima</option>
+                    <option value="listaVozilaSaUkupnimVremenomZaduzenja">Lista vozila sa ukupnim vremenom zaduženja</option>
+                    <option value="listaVozilaKojaKoristeViseDostavljaca">Lista vozila koja koriste više dostavljača</option>
+                    <option value="uporednaProdajaPoProizvodima">Uporedna prodaja po proizvodima</option>
+                    <option value="narudzbeSaProizvodima">Narudžbe sa proizvodima</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Izaberi tip izvještaja">
+        </div>
+    </form>
+
+    <!-- Dodajte Bootstrap skripte -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

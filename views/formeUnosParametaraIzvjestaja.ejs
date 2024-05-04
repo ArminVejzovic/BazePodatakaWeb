@@ -1,0 +1,165 @@
+<html>
+<head>
+    <title>Forma za Izvještaj</title>
+    <!-- Dodajte Bootstrap stilove -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+<h1 class="mt-4">Forma za Izvještaj</h1>
+
+<% if (odabraniIzvjestaj === 'prodajaProizvoda') { %>
+    <!-- Forma za prodaju proizvoda -->
+    <form action="/ruta-za-prodaju-proizvoda" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'prodajaPoKupcima') { %>
+    <!-- Forma za prodaju po kupcima -->
+    <form action="/ruta-za-prodaju-po-kupcima" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'listaNarudzbiKojeNisuIsporucene') { %>
+    <!-- Forma za listu narudžbi koje nisu isporučene -->
+    <form action="/ruta-za-listu-narudzbi-koje-nisu-isporucene" method="post" class="mt-4">
+        <!-- Dodajte potrebna polja za ovaj izvještaj -->
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'listaIsporucenihNarudzbiSaVremenom') { %>
+    <!-- Forma za listu isporučenih narudžbi sa vremenom -->
+    <form action="/ruta-za-listu-isporucenih-narudzbi-sa-vremenom" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="nMinuta">Vrijeme veće od (u minutama):</label>
+            <input type="number" id="nMinuta" name="nMinuta" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'prosjecnoVrijemeIsporukePoDostavljacima') { %>
+    <!-- Forma za prosječno vrijeme isporuke po dostavljačima -->
+    <form action="/ruta-za-prosjecno-vrijeme-isporuke-po-dostavljacima" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'listaVozilaSaUkupnimVremenomZaduzenja') { %>
+    <!-- Forma za listu vozila sa ukupnim vremenom zaduženja -->
+    <form action="/ruta-za-listu-vozila-sa-ukupnim-vremenom-zaduzenja" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'listaVozilaKojaKoristeViseDostavljaca') { %>
+    <!-- Forma za listu vozila koja koriste više dostavljača -->
+    <form action="/ruta-za-listu-vozila-koja-koriste-vise-dostavljaca" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'uporednaProdajaPoProizvodima') { %>
+    <!-- Forma za uporednu prodaju po proizvodima -->
+    <form action="/ruta-za-uporednu-prodaju-po-proizvodima" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma1">Od datuma 1:</label>
+            <input type="date" id="odDatuma1" name="odDatuma1" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma1">Do datuma 1:</label>
+            <input type="date" id="doDatuma1" name="doDatuma1" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="odDatuma2">Od datuma 2:</label>
+            <input type="date" id="odDatuma2" name="odDatuma2" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma2">Do datuma 2:</label>
+            <input type="date" id="doDatuma2" name="doDatuma2" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiraj Izvještaj</button>
+    </form>
+<% } else if (odabraniIzvjestaj === 'narudzbeSaProizvodima') { %>
+    <!-- Forma za narudžbe sa proizvodima -->
+    <form action="/ruta-za-narudzbe-sa-proizvodima" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="odDatuma">Od datuma:</label>
+            <input type="date" id="odDatuma" name="odDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="doDatuma">Do datuma:</label>
+            <input type="date" id="doDatuma" name="doDatuma" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="proizvodiString">Proizvodi (ID-ovi odvojeni zarezom):</label>
+            <input type="text" id="proizvodiString" name="proizvodiString" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generiši Izvještaj</button>
+    </form>
+<% } %>
+
+<!-- Dodajte Bootstrap skripte -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

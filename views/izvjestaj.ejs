@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izvještaji</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+
+    <!-- Izvještaj a) -->
+    <% if(odabraniIzvjestaj === 'prodajaProizvoda') {%>
+        <h1>Izvještaj a)</h1>
+        <div class="mt-4">
+            <h4>Prodaja proizvoda za period</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Proizvod ID</th>
+                    <th>Naziv proizvoda</th>
+                    <th>Ukupna količina</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.proizvod_id %></td>
+                        <td><%= element.naziv_proizvoda %></td>
+                        <td><%= element.ukupna_kolicina %></td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj b) -->
+    <% if(odabraniIzvjestaj === 'prodajaPoKupcima') {%>
+        <h1>Izvještaj b)</h1>
+        <div class="mt-4">
+            <h4>Prodaja po kupcima za period</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Kupac ID</th>
+                    <th>Ime Kupca</th>
+                    <th>Prezime Kupca</th>
+                    <th>Broj narudzbi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.kupac_id %></td>
+                        <td><%= element.ime_kupca %></td>
+                        <td><%= element.prezime_kupca %></td>
+                        <td><%= element.broj_narudzbi %></td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj c) -->
+    <% if(odabraniIzvjestaj === 'neisporuceneNarudzbe') {%>
+        <h1>Izvještaj c)</h1>
+        <div class="mt-4">
+            <h4>Narudzbe koje nisu isporucene</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Narudzba ID</th>
+                    <th>Datum i vrijeme narudzbe</th>
+                    <th>Ime Kupca</th>
+                    <th>Prezime Kupca</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.narudzba_id %></td>
+                        <td><%= element.datum_vrijeme_narudzbe %></td>
+                        <td><%= element.ime_kupca %></td>
+                        <td><%= element.prezime_kupca %></td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj d) -->
+    <% if(odabraniIzvjestaj === 'isporuceneSaVremenom') {%>
+        <h1>Izvještaj d)</h1>
+        <div class="mt-4">
+            <h4>Narudzbe Isporucene sa vremenom n</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Narudzba ID</th>
+                    <th>Datum i vrijeme narudzbe</th>
+                    <th>Datum i vrijeme zavrsetka</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.narudzba_id %></td>
+                        <td><%= element.datum_vrijeme_narudzbe %></td>
+                        <td><%= element.datum_vrijeme_zavrsetka %></td>
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj e) -->
+    <% if(odabraniIzvjestaj === 'prosjecnoVrijemeIsporukeDostavljaci') {%>
+        <h1>Izvještaj e)</h1>
+        <div class="mt-4">
+            <h4>Prosjecno vrijeme isporuke po dostavljacima</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Dostavljac ID</th>
+                    <th>Ime dostavljaca</th>
+                    <th>Prezime dostavljaca</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.dostavljac_id %></td>
+                        <td><%= element.ime_dostavljaca %></td>
+                        <td><%= element.prezime_dostavljaca %></td>
+                        <td><%= element.prezime_dostavljaca %></td>
+                        <td><%= element.prosjecno_vrijeme %></td>
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+
+    <!-- Izvještaj f) -->
+    <% if(odabraniIzvjestaj === 'listaVozilaVrijemeZaduzenja') {%>
+        <h1>Izvještaj e)</h1>
+        <div class="mt-4">
+            <h4>Prosjecno vrijeme isporuke po dostavljacima</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Vozilo ID</th>
+                    <th>Naziv vozila</th>
+                    <th>Tip vozila</th>
+                    <th>Ukupno vrijeme zaduzenja</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.vozilo_id %></td>
+                        <td><%= element.naziv_vozila %></td>
+                        <td><%= element.tip_vozila %></td>
+                        <td><%= element.ukupno_vrijeme_zaduzenja %></td>
+
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj g) -->
+    <% if(odabraniIzvjestaj === 'vozilaSaViseDostavljaca') {%>
+        <h1>Izvještaj g)</h1>
+        <div class="mt-4">
+            <h4>Lista vozila kojih koristi vise dostavljaca</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Vozilo ID</th>
+                    <th>Naziv vozila</th>
+                    <th>Tip vozila</th>
+                    <th>Ukupno vrijeme zaduzenja</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.vozilo_id %></td>
+                        <td><%= element.naziv_vozila %></td>
+                        <td><%= element.tip_vozila %></td>
+                        <td><%= element.broj_dostavljaca %></td>
+
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+
+
+    <!-- Izvještaj h) -->
+    <% if(odabraniIzvjestaj === 'uporednaProdajaPoProizvodima') {%>
+        <h1>Izvještaj h)</h1>
+        <div class="mt-4">
+            <h4>Uporedna prodaja po proizvodima</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Proizvod ID</th>
+                    <th>Naziv proizvoda</th>
+                    <th>Prodaja period 1</th>
+                    <th>Prodaja period 2</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.proizvod_id %></td>
+                        <td><%= element.naziv_proizvoda %></td>
+                        <td><%= element.prodaja_period1 %></td>
+                        <td><%= element.prodaja_period2 %></td>
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+    <!-- Izvještaj i) -->
+    <% if(odabraniIzvjestaj === 'narudzbeSaProizvodima') {%>
+        <h1>Izvještaj h)</h1>
+        <div class="mt-4">
+            <h4>Narudzbe sa proizvodima</h4>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Narudzba ID</th>
+                    <th>Datum vrijeme narudzbe</th>
+                    <th>Ime kupca</th>
+                    <th>Prezime kupca</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% (elementiIzvjestaja[0])[0].forEach(element => { %>
+                    <tr>
+                        <td><%= element.narudzba_id %></td>
+                        <td><%= element.datum_vrijeme_narudzbe %></td>
+                        <td><%= element.ime_kupca %></td>
+                        <td><%= element.prezime_kupca %></td>
+
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <br>
+        <a href="/">Vrati se na Pocetak!!!</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="/"><button type="submit" class="btn btn-primary">Vrati se na Pocetak!</button></a>
+        <br>
+        <br>
+    <% } %>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaduženja vozila</title>
+    <!-- Dodaj Bootstrap linkove ovdje -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <a href="/"><h1 class="mt-5">Zaduženja vozila</h1></a>
+    <ul class="list-group mt-3">
+        <% zaduzenja.forEach(zaduzenje => { %>
+            <li class="list-group-item">
+                <p>Zaduženje ID: <%= zaduzenje.zaduzenje_vozila_id %></p>
+                <p>Dostavljač ID: <%= zaduzenje.dostavljac_id %></p>
+                <p>Vozilo ID: <%= zaduzenje.vozilo_id %></p>
+                <p>Datum i vreme zaduženja: <%= zaduzenje.datum_vrijeme_zaduzenja %></p>
+                <p>Datum i vreme razduženja: <%= zaduzenje.datum_vrijeme_razduzenja || 'Nije razduženo' %></p>
+                <% if (!zaduzenje.datum_vrijeme_razduzenja) { %>
+                    <form action="/zaduzenja-vozila/<%= zaduzenje.zaduzenje_vozila_id %>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger">Razduži vozilo</button>
+                    </form>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <br>
+        <form action="/zaduzenja-vozila-forma" method="GET">
+            <button type="submit">Dodaj Zaduzenje Vozila</button>
+        </form>
+
+    <br>
+</div>
+</body>
+</html>

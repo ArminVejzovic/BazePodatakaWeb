@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4 ">Proizvodi Lista</h1>
+    <br>
+    <div class="row" id="product-list">
+        <% products.forEach(product => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="data:image/png;base64,<%= product.slika_proizvoda.toString('base64') %>" class="card-img-top img-fluid" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.naziv_proizvoda %></h5>
+                        <p class="card-text">Proizvod ID: <%= product.proizvod_id %></p>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaduženje vozila</title>
+    <!-- Dodaj Bootstrap linkove ovdje -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <form action="/zaduzenja-vozila" method="POST">
+        <div class="form-group">
+            <label for="dostavljac_id">Dostavljač ID:</label>
+            <input type="text" class="form-control" name="dostavljac_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="vozilo_id">Vozilo ID:</label>
+            <input type="text" class="form-control" name="vozilo_id" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Zaduži vozilo</button>
+    </form>
+
+    <br>
+    <form action="/zaduzenja" method="GET">
+        <button type="submit">Vrati se na prikaz zaduzenja</button>
+    </form>
+
+    <br>
+</div>
+</body>
+</html>
