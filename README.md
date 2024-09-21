@@ -20,10 +20,9 @@ API for Vehicle Management:
 GET, POST, and DELETE API endpoints for managing vehicle assignments (e.g., delivery vehicles) using vozila (vehicle) tables in the database.
 
 Tehnologies:
-  
-  Node.js
-  EJS
-  MySQL database
+  Node.js, 
+  EJS, 
+  MySQL database.
 
 2. Setup
 
