@@ -7,17 +7,17 @@ This is a Pizza Delivery Shop web application project developed for the "Baze Po
 
 The project consists of the following functionalities:
 
-    Form-Based Report Generation:
-        A web form allows users to input specific parameters to query the database, which then generates a report based on MySQL stored procedures.
+Form-Based Report Generation:
+A web form allows users to input specific parameters to query the database, which then generates a report based on MySQL stored procedures.
 
-    Product Display Page:
-        Displays all available products (pizzas) with their images fetched from the database.
+Product Display Page:
+Displays all available products (pizzas) with their images fetched from the database.
 
-    API Endpoint for Order Status:
-        An API that retrieves the status of an order by querying the narudzba (order) and isporuka (delivery) tables. The statuses could be like 'Ordered', 'In Delivery', etc.
+API Endpoint for Order Status:
+An API that retrieves the status of an order by querying the narudzba (order) and isporuka (delivery) tables. The statuses could be like 'Ordered', 'In Delivery', etc.
 
-    API for Vehicle Management:
-        GET, POST, and DELETE API endpoints for managing vehicle assignments (e.g., delivery vehicles) using vozila (vehicle) tables in the database.
+API for Vehicle Management:
+GET, POST, and DELETE API endpoints for managing vehicle assignments (e.g., delivery vehicles) using vozila (vehicle) tables in the database.
 
 Tehnologies:
   
