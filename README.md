@@ -20,8 +20,11 @@ The project consists of the following functionalities:
         GET, POST, and DELETE API endpoints for managing vehicle assignments (e.g., delivery vehicles) using vozila (vehicle) tables in the database.
 
 Tehnologies:
+  
   Node.js
+  
   EJS
+  
   MySQL database
 
 2. Setup
@@ -69,24 +72,38 @@ Follow these steps to insert images directly into the database:
 
 Using MySQL Workbench:
 
-    Open MySQL Workbench and connect to your database.
-    Go to the Table Data tab by right-clicking on the table where the images will be stored (for example, the products table) and select Select Rows - Limit 1000.
-    In the data grid, find the row where you want to insert the image. Look for the column designated for the image ( slika_proizvoda).
-    Click on the empty cell under the LONG BLOB column for that row.
-    Right-click the cell and select Load Value From File.
-    Browse to the image file you want to insert (e.g., a .png or .jpg file) and select it.
-    MySQL Workbench will convert and store the image in the LONG BLOB field.
-    Click Apply to save the changes.
+Open MySQL Workbench and connect to your database.
+
+Go to the Table Data tab by right-clicking on the table where the images will be stored (for example, the products table) and select Select Rows - Limit 1000.
+
+In the data grid, find the row where you want to insert the image. Look for the column designated for the image ( slika_proizvoda).
+
+Click on the empty cell under the LONG BLOB column for that row.
+
+Right-click the cell and select Load Value From File.
+
+Browse to the image file you want to insert (e.g., a .png or .jpg file) and select it.
+
+MySQL Workbench will convert and store the image in the LONG BLOB field.
+
+Click Apply to save the changes.
 
 Using DBeaver:
 
-    Open DBeaver and connect to your database.
-    Navigate to the products table (or the table where images will be stored) and right-click to select View/Edit Data -> All Rows.
-    In the opened data editor, locate the LONG BLOB column where the image will be stored.
-    Right-click on the cell where you want to insert the image and select Load from File.
-    Choose the image file from your computer (e.g., a .jpg or .png file).
-    After selecting the file, DBeaver will load the binary data of the image into the LONG BLOB field.
-    Click Save to commit the changes to the database.
+Open DBeaver and connect to your database.
+
+Navigate to the products table (or the table where images will be stored) and right-click to select View/Edit Data -> All Rows.
+
+In the opened data editor, locate the LONG BLOB column where the image will be stored.
+
+Right-click on the cell where you want to insert the image and select Load from File.
+
+Choose the image file from your computer (e.g., a .jpg or .png file).
+
+After selecting the file, DBeaver will load the binary data of the image into the LONG BLOB field.
+
+Click Save to commit the changes to the database.
+
 
 Make sure to insert images with reasonable file sizes to optimize the performance of the application when fetching and displaying the images.
 
