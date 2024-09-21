@@ -61,7 +61,36 @@ bash
 
 Access the web application: After running the application, open your browser and go to http://localhost:3000.
 
-SQL Database Structure
+3. Inserting Images into the Database Table proizvodi
+
+Images for products (such as pizzas) need to be stored in the database. The slika_proizvoda (images) column is of type LONG BLOB, which means the images can be inserted directly into the database using binary format. To achieve this, you can use tools like DBeaver or MySQL Workbench.
+
+Follow these steps to insert images directly into the database:
+
+Using MySQL Workbench:
+
+    Open MySQL Workbench and connect to your database.
+    Go to the Table Data tab by right-clicking on the table where the images will be stored (for example, the products table) and select Select Rows - Limit 1000.
+    In the data grid, find the row where you want to insert the image. Look for the column designated for the image ( slika_proizvoda).
+    Click on the empty cell under the LONG BLOB column for that row.
+    Right-click the cell and select Load Value From File.
+    Browse to the image file you want to insert (e.g., a .png or .jpg file) and select it.
+    MySQL Workbench will convert and store the image in the LONG BLOB field.
+    Click Apply to save the changes.
+
+Using DBeaver:
+
+    Open DBeaver and connect to your database.
+    Navigate to the products table (or the table where images will be stored) and right-click to select View/Edit Data -> All Rows.
+    In the opened data editor, locate the LONG BLOB column where the image will be stored.
+    Right-click on the cell where you want to insert the image and select Load from File.
+    Choose the image file from your computer (e.g., a .jpg or .png file).
+    After selecting the file, DBeaver will load the binary data of the image into the LONG BLOB field.
+    Click Save to commit the changes to the database.
+
+Make sure to insert images with reasonable file sizes to optimize the performance of the application when fetching and displaying the images.
+
+4. SQL Database Structure
 
 To set up your database, you will need to run SQL queries for creating the necessary tables, triggers, and stored procedures. Below is an example template that you can replace with your specific SQL logic:
 
